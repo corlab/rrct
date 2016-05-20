@@ -1,4 +1,4 @@
-# This file is a part of RRCT (CogIMon) project
+# This file is a part of RST-RT (CogIMon) project
 #
 # Copyright (C) 2016 Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
 #
