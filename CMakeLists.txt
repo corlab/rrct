@@ -40,7 +40,8 @@ set(LIBRARY_NAME "${CMAKE_PROJECT_NAME}${INSTALL_SUFFIX}")
 
 find_package(Eigen3)
 
-include(${EIGEN3_USE_FILE})
+add_definitions(${EIGEN3_DEFINITIONS})
+include_directories(${EIGEN3_INCLUDE_DIRS})
 
 # Sub-directories
 
