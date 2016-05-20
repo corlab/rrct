@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of RST-RT (CogIMon) project
+ * This file is a part of RRCT (CogIMon) project
  *
  * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand at cor-lab dot uni-bielefeld dot de>
  *
@@ -24,28 +24,27 @@
  *
  * ============================================================ */
 
-#pragma once
+#include "JointImpedance.hpp"
 
-#include <iostream>
+namespace rrct {
+namespace dynamics {
 
-#include <Eigen/Dense>
+JointImpedance::JointImpedance() {
+}
+;
+JointImpedance::JointImpedance(int size) {
+    stiffness.resize(size);
+    damping.resize(size);
+}
+;
 
-namespace rstrt {
-namespace kinematics {
+std::ostream& operator<<(std::ostream& os, const JointImpedance& cd) {
+    return os << cd.stiffness << cd.damping; // TODO check if this makes sense
+}
 
-class JointAngles {
-public:
-    JointAngles();
-    JointAngles(int size);
-
-//private:
-    Eigen::VectorXd angles;
-};
-
-// Displaying:
-std::ostream& operator<<(std::ostream& os, const JointAngles& cd);
-// Reading:
-std::istream& operator>>(std::istream& is, JointAngles& cd);
+std::istream& operator>>(std::istream& is, JointImpedance& cd) {
+    return is;// >> cd.stiffness >> cd.damping; // TODO check if this makes sense
+}
 
 }
 }

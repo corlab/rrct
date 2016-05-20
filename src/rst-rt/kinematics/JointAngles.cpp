@@ -31,18 +31,18 @@ namespace kinematics {
 
 JointAngles::JointAngles() {
 }
-
+;
 JointAngles::JointAngles(int size) {
-    data_rad.resize(size);
+    angles.resize(size);
 }
-
+;
 
 std::ostream& operator<<(std::ostream& os, const JointAngles& cd) {
-    return os << cd.data_rad;
+    return os << cd.angles;
 }
 
 std::istream& operator>>(std::istream& is, JointAngles& cd) {
-    return is; // >> cd.data_rad;
+    return is;// >> cd.angles;
 }
 
 }

@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of RST-RT (CogIMon) project
+ * This file is a part of RRCT (CogIMon) project
  *
  * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand at cor-lab dot uni-bielefeld dot de>
  *
@@ -24,28 +24,26 @@
  *
  * ============================================================ */
 
-#pragma once
+#include "JointAccelerations.hpp"
 
-#include <iostream>
-
-#include <Eigen/Dense>
-
-namespace rstrt {
+namespace rrct {
 namespace kinematics {
 
-class JointAngles {
-public:
-    JointAngles();
-    JointAngles(int size);
+JointAccelerations::JointAccelerations() {
+}
+;
+JointAccelerations::JointAccelerations(int size) {
+	accelerations.resize(size);
+}
+;
 
-//private:
-    Eigen::VectorXd angles;
-};
+std::ostream& operator<<(std::ostream& os, const JointAccelerations& cd) {
+    return os << cd.accelerations;
+}
 
-// Displaying:
-std::ostream& operator<<(std::ostream& os, const JointAngles& cd);
-// Reading:
-std::istream& operator>>(std::istream& is, JointAngles& cd);
+std::istream& operator>>(std::istream& is, JointAccelerations& cd) {
+    return is;// >> cd.accelerations;
+}
 
 }
 }
