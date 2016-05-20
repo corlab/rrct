@@ -34,6 +34,8 @@ set(${PROJECT_NAME_UPPER}_VERSION "${${PROJECT_NAME_UPPER}_VERSION_MAJOR}.${${PR
 
 set(INSTALL_SUFFIX "${${PROJECT_NAME_UPPER}_VERSION}")
 
+set(LIBRARY_NAME "${CMAKE_PROJECT_NAME}${INSTALL_SUFFIX}")
+
 # Dependencies
 
 find_package(Eigen3)
@@ -45,3 +47,12 @@ include_directories(${EIGEN3_INCLUDE_DIRS})
 # Sub-directories
 
 add_subdirectory(src)
+
+# Installation
+
+configure_file("${CMAKE_PROJECT_NAME}-config.cmake.in"
+               "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-config.cmake"
+               @ONLY)
+
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-config.cmake"
+        DESTINATION "share/${CMAKE_PROJECT_NAME}-${INSTALL_SUFFIX}")

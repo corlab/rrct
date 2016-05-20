@@ -28,8 +28,6 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp)
 
 # Shared object
 
-set(LIBRARY_NAME "${CMAKE_PROJECT_NAME}${INSTALL_SUFFIX}")
-
 add_library(${LIBRARY_NAME} SHARED
             ${SOURCES})
 
