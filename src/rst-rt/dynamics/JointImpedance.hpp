@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of RRCT (CogIMon) project
+ * This file is a part of RST-RT (CogIMon) project
  *
  * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand at cor-lab dot uni-bielefeld dot de>
  *
@@ -30,7 +30,7 @@
 
 #include <Eigen/Dense>
 
-namespace rrct {
+namespace rstrt {
 namespace dynamics {
 
 class JointImpedance {

@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of RRCT (CogIMon) project
+ * This file is a part of RST-RT (CogIMon) project
  *
  * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand at cor-lab dot uni-bielefeld dot de>
  *
@@ -26,7 +26,7 @@
 
 #include "JointAccelerations.hpp"
 
-namespace rrct {
+namespace rstrt {
 namespace kinematics {
 
 JointAccelerations::JointAccelerations() {
