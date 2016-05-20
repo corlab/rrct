@@ -26,16 +26,16 @@
 
 #include "JointAngles.hpp"
 
-namespace rrct {
+namespace rstrt {
 namespace kinematics {
 
 JointAngles::JointAngles() {
 }
-;
+
 JointAngles::JointAngles(int size) {
     data_rad.resize(size);
 }
-;
+
 
 std::ostream& operator<<(std::ostream& os, const JointAngles& cd) {
     return os << cd.data_rad;

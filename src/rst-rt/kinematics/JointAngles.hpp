@@ -30,7 +30,7 @@
 
 #include <Eigen/Dense>
 
-namespace rrct {
+namespace rstrt {
 namespace kinematics {
 
 class JointAngles {
