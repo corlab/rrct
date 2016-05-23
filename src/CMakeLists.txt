@@ -22,9 +22,17 @@
 
 # Sources
 
-set(SOURCES ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.cpp)
+set(SOURCES ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.cpp
+	${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.cpp
+	${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.cpp
+	${CMAKE_PROJECT_NAME}/dynamics/JointTorques.cpp
+	${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.cpp)
 
-set(HEADERS ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp)
+set(HEADERS ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp
+	${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.hpp
+	${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.hpp
+	${CMAKE_PROJECT_NAME}/dynamics/JointTorques.hpp
+	${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.hpp)
 
 # Shared object
 
