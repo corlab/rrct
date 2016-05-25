@@ -35,8 +35,8 @@ namespace kinematics {
 
 class JointAccelerations {
 public:
-	JointAccelerations();
-	JointAccelerations(int size);
+    JointAccelerations();
+    JointAccelerations(int size);
 
 //private:
     Eigen::VectorXd accelerations;

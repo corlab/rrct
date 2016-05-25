@@ -35,8 +35,8 @@ namespace dynamics {
 
 class JointImpedance {
 public:
-	JointImpedance();
-	JointImpedance(int size);
+    JointImpedance();
+    JointImpedance(int size);
 
 //private:
     Eigen::VectorXd stiffness;

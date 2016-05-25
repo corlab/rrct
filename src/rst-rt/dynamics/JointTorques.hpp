@@ -35,8 +35,8 @@ namespace dynamics {
 
 class JointTorques {
 public:
-	JointTorques();
-	JointTorques(int size);
+    JointTorques();
+    JointTorques(int size);
 
 //private:
     Eigen::VectorXd torques;
