@@ -31,12 +31,11 @@ namespace dynamics {
 
 JointImpedance::JointImpedance() {
 }
-;
+
 JointImpedance::JointImpedance(int size) {
     stiffness.resize(size);
     damping.resize(size);
 }
-;
 
 std::ostream& operator<<(std::ostream& os, const JointImpedance& cd) {
     return os << cd.stiffness << cd.damping; // TODO check if this makes sense
