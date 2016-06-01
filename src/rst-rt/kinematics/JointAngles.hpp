@@ -39,7 +39,7 @@ public:
     JointAngles(int size);
 
 //private:
-    Eigen::VectorXd angles;
+    Eigen::VectorXf angles;
 };
 
 // Displaying:

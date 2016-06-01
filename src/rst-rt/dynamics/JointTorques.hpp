@@ -39,7 +39,7 @@ public:
     JointTorques(int size);
 
 //private:
-    Eigen::VectorXd torques;
+    Eigen::VectorXf torques;
 };
 
 // Displaying:

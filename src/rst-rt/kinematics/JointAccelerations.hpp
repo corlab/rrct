@@ -39,7 +39,7 @@ public:
     JointAccelerations(int size);
 
 //private:
-    Eigen::VectorXd accelerations;
+    Eigen::VectorXf accelerations;
 };
 
 // Displaying:

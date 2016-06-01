@@ -39,7 +39,7 @@ public:
     JointVelocities(int size);
 
 //private:
-    Eigen::VectorXd velocities;
+    Eigen::VectorXf velocities;
 };
 
 // Displaying:

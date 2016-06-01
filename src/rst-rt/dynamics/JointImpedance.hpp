@@ -39,8 +39,8 @@ public:
     JointImpedance(int size);
 
 //private:
-    Eigen::VectorXd stiffness;
-    Eigen::VectorXd damping;
+    Eigen::VectorXf stiffness;
+    Eigen::VectorXf damping;
 };
 
 // Displaying:
