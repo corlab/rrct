@@ -31,11 +31,11 @@ namespace dynamics {
 
 JointTorques::JointTorques() {
 }
-;
+
 JointTorques::JointTorques(int size) {
-    torques.resize(size);
+    this->torques.resize(size);
+    this->torques.fill(0);
 }
-;
 
 std::ostream& operator<<(std::ostream& os, const JointTorques& cd) {
     return os << cd.torques;

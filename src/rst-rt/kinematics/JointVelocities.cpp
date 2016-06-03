@@ -31,11 +31,11 @@ namespace kinematics {
 
 JointVelocities::JointVelocities() {
 }
-;
+
 JointVelocities::JointVelocities(int size) {
-	velocities.resize(size);
+    this->velocities.resize(size);
+    this->velocities.fill(0);
 }
-;
 
 std::ostream& operator<<(std::ostream& os, const JointVelocities& cd) {
     return os << cd.velocities;
