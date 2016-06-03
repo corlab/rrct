@@ -23,6 +23,7 @@
 # Sources
 
 set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
+            ${CMAKE_PROJECT_NAME}/geometry/Rotation.cpp
 
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.cpp
@@ -32,6 +33,7 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.cpp)
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
+            ${CMAKE_PROJECT_NAME}/geometry/Rotation.hpp
 
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.hpp
