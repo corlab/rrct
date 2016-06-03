@@ -2,7 +2,7 @@
  *
  * This file is a part of RST-RT (CogIMon) project
  *
- * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand at cor-lab dot uni-bielefeld dot de>
+ * Copyright (C) 2016 by Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
  *
  * This file may be licensed under the terms of the
  * GNU Lesser General Public License Version 3 (the ``LGPL''),
