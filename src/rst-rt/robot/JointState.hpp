@@ -35,8 +35,8 @@ namespace robot {
 
 class JointState {
 public:
-	JointState();
-	JointState(int size);
+    JointState();
+    JointState(int size);
 
 //private:
     Eigen::VectorXf angles;

@@ -37,15 +37,17 @@ JointState::JointState(int size) {
     this->angles.fill(0);
 
     this->velocities.resize(size);
-	this->velocities.fill(0);
+    this->velocities.fill(0);
 
-	this->torques.resize(size);
-	this->torques.fill(0);
+    this->torques.resize(size);
+    this->torques.fill(0);
 }
 
 
 std::ostream& operator<<(std::ostream& os, const JointState& cd) {
-    return os << "JointState : {\nangles : " << cd.angles << "\nvelocities : " << cd.velocities << "\ntorques : " << cd.torques << "\n}";
+    return os << "JointState : {\nangles : " << cd.angles
+              << "\nvelocities : " << cd.velocities
+              << "\ntorques : " << cd.torques << "\n}";
 }
 
 std::istream& operator>>(std::istream& is, JointState& cd) {
