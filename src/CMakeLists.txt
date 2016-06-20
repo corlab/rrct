@@ -28,11 +28,14 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.cpp
+            ${CMAKE_PROJECT_NAME}/kinematics/JointJerks.cpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.cpp
             
-            ${CMAKE_PROJECT_NAME}/robot/JointState.cpp)
+            ${CMAKE_PROJECT_NAME}/robot/JointState.cpp
+            ${CMAKE_PROJECT_NAME}/robot/Weights.cpp
+)
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/geometry/Rotation.hpp
@@ -40,11 +43,14 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.hpp
+            ${CMAKE_PROJECT_NAME}/kinematics/JointJerks.hpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.hpp
             
-            ${CMAKE_PROJECT_NAME}/robot/JointState.hpp)
+            ${CMAKE_PROJECT_NAME}/robot/JointState.hpp
+            ${CMAKE_PROJECT_NAME}/robot/Weights.hpp
+)
 
 # Shared object
 
