@@ -32,6 +32,9 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.cpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Forces.cpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Torques.cpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Wrench.cpp
             
             ${CMAKE_PROJECT_NAME}/robot/JointState.cpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.cpp
@@ -47,6 +50,9 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.hpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Forces.hpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Torques.hpp
+            ${CMAKE_PROJECT_NAME}/dynamics/Wrench.hpp
             
             ${CMAKE_PROJECT_NAME}/robot/JointState.hpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.hpp
