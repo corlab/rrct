@@ -32,7 +32,7 @@ namespace dynamics {
 Forces::Forces() {
 }
 
-Forces::Forces(double x, double y, double z)
+Forces::Forces(float x, float y, float z)
     : forces(x, y, z) {
 }
 

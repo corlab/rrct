@@ -32,11 +32,11 @@ namespace geometry {
 Translation::Translation() {
 }
 
-Translation::Translation(double x, double y, double z)
+Translation::Translation(float x, float y, float z)
     : translation(x, y, z) {
 }
 
-Translation::Translation(double x, double y, double z, const std::string& frameId)
+Translation::Translation(float x, float y, float z, const std::string& frameId)
     : translation(x, y, z), frameId(frameId) {
 }
 

@@ -36,9 +36,9 @@ namespace dynamics {
 class Torques {
 public:
 	Torques();
-	Torques(double a, double b, double c);
+	Torques(float a, float b, float c);
 //private:
-    Eigen::Matrix<double, 3, 1> torques;
+    Eigen::Matrix<float, 3, 1> torques;
 };
 
 std::ostream& operator<<(std::ostream& os, const Torques& cd);

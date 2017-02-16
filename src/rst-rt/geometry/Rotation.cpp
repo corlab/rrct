@@ -32,11 +32,11 @@ namespace geometry {
 Rotation::Rotation() {
 }
 
-Rotation::Rotation(double qw, double qx, double qy, double qz)
+Rotation::Rotation(float qw, float qx, float qy, float qz)
     : rotation(qw, qx, qy, qz) {
 }
 
-Rotation::Rotation(double qw, double qx, double qy, double qz,
+Rotation::Rotation(float qw, float qx, float qy, float qz,
                    const std::string& frameId)
     : rotation(qw, qx, qy, qz), frameId(frameId) {
 }

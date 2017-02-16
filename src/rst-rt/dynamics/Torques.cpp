@@ -32,7 +32,7 @@ namespace dynamics {
 Torques::Torques() {
 }
 
-Torques::Torques(double a, double b, double c)
+Torques::Torques(float a, float b, float c)
     : torques(a, b, c) {
 }
 

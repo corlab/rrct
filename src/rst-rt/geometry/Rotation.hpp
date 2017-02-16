@@ -36,11 +36,11 @@ namespace geometry {
 class Rotation {
 public:
     Rotation();
-    Rotation(double qw, double qx, double qy, double qz);
-    Rotation(double qw, double qx, double qy, double qz,
+    Rotation(float qw, float qx, float qy, float qz);
+    Rotation(float qw, float qx, float qy, float qz,
              const std::string& frameId);
 //private:
-    Eigen::Matrix<double, 4, 1> rotation;
+    Eigen::Matrix<float, 4, 1> rotation;
     std::string                 frameId;
 };
 

@@ -36,10 +36,10 @@ namespace geometry {
 class Translation {
 public:
     Translation();
-    Translation(double x, double y, double z);
-    Translation(double x, double y, double z, const std::string& frameId);
+    Translation(float x, float y, float z);
+    Translation(float x, float y, float z, const std::string& frameId);
 //private:
-    Eigen::Matrix<double, 3, 1> translation;
+    Eigen::Matrix<float, 3, 1> translation;
     std::string                 frameId;
 };
 

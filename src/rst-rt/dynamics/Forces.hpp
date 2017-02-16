@@ -36,9 +36,9 @@ namespace dynamics {
 class Forces {
 public:
 	Forces();
-	Forces(double x, double y, double z);
+	Forces(float x, float y, float z);
 //private:
-    Eigen::Matrix<double, 3, 1> forces;
+    Eigen::Matrix<float, 3, 1> forces;
 };
 
 std::ostream& operator<<(std::ostream& os, const Forces& cd);

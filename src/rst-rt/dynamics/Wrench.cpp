@@ -34,7 +34,7 @@ Wrench::Wrench() {
 	this->torques.fill(0);
 }
 
-Wrench::Wrench(double x, double y, double z, double a, double b, double c) :
+Wrench::Wrench(float x, float y, float z, float a, float b, float c) :
 		forces(x, y, z), torques(a, b, c) {
 }
 
