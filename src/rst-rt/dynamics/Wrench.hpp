@@ -30,6 +30,9 @@
 
 #include <Eigen/Dense>
 
+#include "Forces.hpp"
+#include "Torques.hpp"
+
 namespace rstrt {
 namespace dynamics {
 
@@ -37,10 +40,11 @@ class Wrench {
 public:
 	Wrench();
 	Wrench(double x, double y, double z, double a, double b, double c);
+	Wrench(rstrt::dynamics::Forces f, rstrt::dynamics::Torques t);
 
 //private:
-    Eigen::Matrix<double, 3, 1> forces;
-    Eigen::Matrix<double, 3, 1> torques;
+    Eigen::Vector3d forces;
+    Eigen::Vector3d torques;
 };
 
 // Displaying:

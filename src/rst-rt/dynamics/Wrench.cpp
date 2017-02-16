@@ -38,6 +38,10 @@ Wrench::Wrench(double x, double y, double z, double a, double b, double c) :
 		forces(x, y, z), torques(a, b, c) {
 }
 
+Wrench::Wrench(rstrt::dynamics::Forces f, rstrt::dynamics::Torques t) :
+		forces(f.forces), torques(t.torques) {
+}
+
 std::ostream& operator<<(std::ostream& os, const Wrench& cd) {
 	return os << "Wrench : {\nforces : " << cd.forces << "\ntorques : "
 			<< cd.torques << "\n}";
