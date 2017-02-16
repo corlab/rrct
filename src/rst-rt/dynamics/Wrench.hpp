@@ -43,8 +43,8 @@ public:
 	Wrench(rstrt::dynamics::Forces f, rstrt::dynamics::Torques t);
 
 //private:
-    Eigen::Vector3d forces;
-    Eigen::Vector3d torques;
+    Eigen::Matrix<double, 3, 1> forces;
+    Eigen::Matrix<double, 3, 1> torques;
 };
 
 // Displaying:
