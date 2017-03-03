@@ -24,6 +24,8 @@
 
 set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/geometry/Rotation.cpp
+            ${CMAKE_PROJECT_NAME}/geometry/LinearAcceleration.cpp
+            ${CMAKE_PROJECT_NAME}/geometry/AngularVelocity.cpp
 
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.cpp
@@ -38,10 +40,13 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             
             ${CMAKE_PROJECT_NAME}/robot/JointState.cpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.cpp
+            ${CMAKE_PROJECT_NAME}/robot/IMU.cpp
 )
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/geometry/Rotation.hpp
+            ${CMAKE_PROJECT_NAME}/geometry/LinearAcceleration.hpp
+            ${CMAKE_PROJECT_NAME}/geometry/AngularVelocity.hpp
 
             ${CMAKE_PROJECT_NAME}/kinematics/JointAngles.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.hpp
@@ -56,6 +61,7 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             
             ${CMAKE_PROJECT_NAME}/robot/JointState.hpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.hpp
+            ${CMAKE_PROJECT_NAME}/robot/IMU.hpp
 )
 
 # Shared object
