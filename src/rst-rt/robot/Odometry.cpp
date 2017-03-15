@@ -2,7 +2,7 @@
  *
  * This file is a part of RST-RT (CogIMon) project
  *
- * Copyright (C) 2016 by Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+ * Copyright (C) 2017 by Dennis Leroy Wigand <dwigand@techfak.uni-bielefeld.de>
  *
  * This file may be licensed under the terms of the
  * GNU Lesser General Public License Version 3 (the ``LGPL''),
@@ -24,34 +24,34 @@
  *
  * ============================================================ */
 
-#pragma once
-
-#include <iostream>
-
-#include <Eigen/Dense>
+#include "Odometry.hpp"
 
 namespace rstrt {
-namespace geometry {
+namespace robot {
 
-class Rotation {
-public:
-	Rotation();
-	Rotation(float qw, float qx, float qy, float qz);
-	Rotation(float r, float p, float y);
-	Rotation(float r, float p, float y, const std::string& fId);
-	Rotation(float qw, float qx, float qy, float qz,
-			const std::string& fId);
-//private:
-	Eigen::Matrix<float, 4, 1> rotation;
-	std::string frameId;
+Odometry::Odometry() {
+}
 
-	Eigen::Quaternionf euler2Quaternion(const float roll, const float pitch,
-			const float yaw);
-	Eigen::Vector3f quaternion2Euler(const Eigen::Quaternionf q);
-};
+Odometry::Odometry(rstrt::geometry::Pose p, rstrt::kinematics::Twist t) :
+		pose(p), twist(t) {
 
-std::ostream& operator<<(std::ostream& os, const Rotation& cd);
-std::istream& operator>>(std::istream& is, Rotation& cd);
+}
+
+Odometry::Odometry(float px, float py, float pz, float pqw, float pqx,
+		float pqy, float pqz, float lx, float ly, float lz, float aa, float ab,
+		float ac) :
+		pose(px, py, pz, pqw, pqx, pqy, pqz), twist(lx, ly, lz, aa, ab, ac) {
+
+}
+
+std::ostream& operator<<(std::ostream& os, const Odometry& cd) {
+	os << cd.pose << std::endl << cd.twist;
+	return os;
+}
+
+std::istream& operator>>(std::istream& is, Odometry& cd) {
+	return is;
+}
 
 }
 }

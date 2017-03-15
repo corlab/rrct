@@ -32,25 +32,58 @@ namespace geometry {
 Rotation::Rotation() {
 }
 
-Rotation::Rotation(float qw, float qx, float qy, float qz)
-    : rotation(qw, qx, qy, qz) {
+Rotation::Rotation(float qw, float qx, float qy, float qz) :
+		rotation(qw, qx, qy, qz) {
 }
 
 Rotation::Rotation(float qw, float qx, float qy, float qz,
-                   const std::string& frameId)
-    : rotation(qw, qx, qy, qz), frameId(frameId) {
+		const std::string& fId) :
+		rotation(qw, qx, qy, qz), frameId(fId) {
+}
+
+Rotation::Rotation(float r, float p, float y) {
+	Eigen::Quaternionf q = euler2Quaternion(r, p, y);
+	rotation(0) = q.w();
+	rotation(1) = q.x();
+	rotation(2) = q.y();
+	rotation(3) = q.z();
+}
+
+Rotation::Rotation(float r, float p, float y, const std::string& fId) {
+	Eigen::Quaternionf q = euler2Quaternion(r, p, y);
+	rotation(0) = q.w();
+	rotation(1) = q.x();
+	rotation(2) = q.y();
+	rotation(3) = q.z();
+	frameId = fId;
 }
 
 std::ostream& operator<<(std::ostream& os, const Rotation& cd) {
-    os << cd.rotation;
-    if (!cd.frameId.empty()) {
-        os << std::endl << "in frame " << cd.frameId;
-    }
-    return os;
+	os << cd.rotation;
+	if (!cd.frameId.empty()) {
+		os << std::endl << "in frame " << cd.frameId;
+	}
+	return os;
 }
 
 std::istream& operator>>(std::istream& is, Rotation& cd) {
-    return is;
+	return is;
+}
+
+Eigen::Quaternionf Rotation::euler2Quaternion(const float roll,
+		const float pitch, const float yaw) {
+	// TODO 1 xyz order: If there is a problem check all the other 24 combinations of euler angles -.-
+	// TODO 2 Don't know it this has a bad influence on real-time?
+	Eigen::AngleAxisf rollAngle((roll * M_PI) / 180, Eigen::Vector3f::UnitX());
+	Eigen::AngleAxisf yawAngle((yaw * M_PI) / 180, Eigen::Vector3f::UnitZ());
+	Eigen::AngleAxisf pitchAngle((pitch * M_PI) / 180,
+			Eigen::Vector3f::UnitY());
+
+	return rollAngle * pitchAngle * yawAngle;
+}
+
+Eigen::Vector3f Rotation::quaternion2Euler(const Eigen::Quaternionf q) {
+	return q.toRotationMatrix().eulerAngles(0, 1, 2);
 }
 
 }

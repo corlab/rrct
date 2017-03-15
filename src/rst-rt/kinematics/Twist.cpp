@@ -2,7 +2,7 @@
  *
  * This file is a part of RST-RT (CogIMon) project
  *
- * Copyright (C) 2016 by Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+ * Copyright (C) 2017 by Dennis Leroy Wigand <dwigand@techfak.uni-bielefeld.de>
  *
  * This file may be licensed under the terms of the
  * GNU Lesser General Public License Version 3 (the ``LGPL''),
@@ -24,34 +24,33 @@
  *
  * ============================================================ */
 
-#pragma once
-
-#include <iostream>
-
-#include <Eigen/Dense>
+#include "Twist.hpp"
 
 namespace rstrt {
-namespace geometry {
+namespace kinematics {
 
-class Rotation {
-public:
-	Rotation();
-	Rotation(float qw, float qx, float qy, float qz);
-	Rotation(float r, float p, float y);
-	Rotation(float r, float p, float y, const std::string& fId);
-	Rotation(float qw, float qx, float qy, float qz,
-			const std::string& fId);
-//private:
-	Eigen::Matrix<float, 4, 1> rotation;
-	std::string frameId;
+Twist::Twist() {
+}
 
-	Eigen::Quaternionf euler2Quaternion(const float roll, const float pitch,
-			const float yaw);
-	Eigen::Vector3f quaternion2Euler(const Eigen::Quaternionf q);
-};
+Twist::Twist(rstrt::kinematics::LinearVelocities l,
+		rstrt::geometry::AngularVelocity a) :
+		linear(l), angular(a) {
 
-std::ostream& operator<<(std::ostream& os, const Rotation& cd);
-std::istream& operator>>(std::istream& is, Rotation& cd);
+}
+
+Twist::Twist(float x, float y, float z, float a, float b, float c) :
+		linear(x, y, z), angular(a, b, c) {
+
+}
+
+std::ostream& operator<<(std::ostream& os, const Twist& cd) {
+	os << cd.linear << std::endl << cd.angular;
+	return os;
+}
+
+std::istream& operator>>(std::istream& is, Twist& cd) {
+	return is;
+}
 
 }
 }

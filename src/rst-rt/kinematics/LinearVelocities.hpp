@@ -2,7 +2,7 @@
  *
  * This file is a part of RST-RT (CogIMon) project
  *
- * Copyright (C) 2016 by Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+ * Copyright (C) 2016 by Dennis Leroy Wigand <dwigand@techfak.uni-bielefeld.de>
  *
  * This file may be licensed under the terms of the
  * GNU Lesser General Public License Version 3 (the ``LGPL''),
@@ -31,27 +31,18 @@
 #include <Eigen/Dense>
 
 namespace rstrt {
-namespace geometry {
+namespace kinematics {
 
-class Rotation {
+class LinearVelocities {
 public:
-	Rotation();
-	Rotation(float qw, float qx, float qy, float qz);
-	Rotation(float r, float p, float y);
-	Rotation(float r, float p, float y, const std::string& fId);
-	Rotation(float qw, float qx, float qy, float qz,
-			const std::string& fId);
+    LinearVelocities();
+    LinearVelocities(float x, float y, float z);
 //private:
-	Eigen::Matrix<float, 4, 1> rotation;
-	std::string frameId;
-
-	Eigen::Quaternionf euler2Quaternion(const float roll, const float pitch,
-			const float yaw);
-	Eigen::Vector3f quaternion2Euler(const Eigen::Quaternionf q);
+    Eigen::Matrix<float, 3, 1> linearVelocities;
 };
 
-std::ostream& operator<<(std::ostream& os, const Rotation& cd);
-std::istream& operator>>(std::istream& is, Rotation& cd);
+std::ostream& operator<<(std::ostream& os, const LinearVelocities& cd);
+std::istream& operator>>(std::istream& is, LinearVelocities& cd);
 
 }
 }

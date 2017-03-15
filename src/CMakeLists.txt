@@ -24,6 +24,7 @@
 
 set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/geometry/Rotation.cpp
+            ${CMAKE_PROJECT_NAME}/geometry/Pose.cpp
             ${CMAKE_PROJECT_NAME}/geometry/LinearAcceleration.cpp
             ${CMAKE_PROJECT_NAME}/geometry/AngularVelocity.cpp
 
@@ -31,6 +32,8 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.cpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointJerks.cpp
+            ${CMAKE_PROJECT_NAME}/kinematics/LinearVelocities.cpp
+            ${CMAKE_PROJECT_NAME}/kinematics/Twist.cpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.cpp
@@ -41,10 +44,12 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/robot/JointState.cpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.cpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.cpp
+            ${CMAKE_PROJECT_NAME}/robot/Odometry.cpp
 )
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/geometry/Rotation.hpp
+            ${CMAKE_PROJECT_NAME}/geometry/Pose.hpp
             ${CMAKE_PROJECT_NAME}/geometry/LinearAcceleration.hpp
             ${CMAKE_PROJECT_NAME}/geometry/AngularVelocity.hpp
 
@@ -52,6 +57,8 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointVelocities.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointAccelerations.hpp
             ${CMAKE_PROJECT_NAME}/kinematics/JointJerks.hpp
+            ${CMAKE_PROJECT_NAME}/kinematics/LinearVelocities.hpp
+            ${CMAKE_PROJECT_NAME}/kinematics/Twist.hpp
 
             ${CMAKE_PROJECT_NAME}/dynamics/JointTorques.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/JointImpedance.hpp
@@ -62,6 +69,7 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/robot/JointState.hpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.hpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.hpp
+            ${CMAKE_PROJECT_NAME}/robot/Odometry.hpp
 )
 
 # Shared object
