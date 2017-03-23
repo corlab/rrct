@@ -33,11 +33,13 @@ Translation::Translation() {
 }
 
 Translation::Translation(float x, float y, float z)
-    : translation(x, y, z) {
+    : translation(3) {
+	translation << x,y,z;
 }
 
 Translation::Translation(float x, float y, float z, const std::string& frameId)
-    : translation(x, y, z), frameId(frameId) {
+    : translation(3), frameId(frameId) {
+	translation << x,y,z;
 }
 
 std::ostream& operator<<(std::ostream& os, const Translation& cd) {
