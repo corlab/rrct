@@ -29,7 +29,7 @@
 namespace rstrt {
 namespace geometry {
 
-Pose::Pose() {
+Pose::Pose() : translation(), rotation() {
 }
 
 Pose::Pose(rstrt::geometry::Translation t, rstrt::geometry::Rotation r) :

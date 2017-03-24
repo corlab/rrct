@@ -29,11 +29,13 @@
 namespace rstrt {
 namespace geometry {
 
-LinearAcceleration::LinearAcceleration() {
+LinearAcceleration::LinearAcceleration() : linearAcceleration(3) {
+	linearAcceleration.fill(0);
 }
 
 LinearAcceleration::LinearAcceleration(float x, float y, float z)
-    : linearAcceleration(x, y, z) {
+    : linearAcceleration(3) {
+	linearAcceleration << x, y, z;
 }
 
 std::ostream& operator<<(std::ostream& os, const LinearAcceleration& cd) {

@@ -33,10 +33,10 @@ JointImpedance::JointImpedance() {
 }
 
 JointImpedance::JointImpedance(int size) {
-    this->stiffness.resize(size);
-    this->stiffness.fill(0);
-    this->damping.resize(size);
-    this->damping.fill(0);
+    stiffness.resize(size);
+    stiffness.fill(0);
+    damping.resize(size);
+    damping.fill(0);
 }
 
 std::ostream& operator<<(std::ostream& os, const JointImpedance& cd) {

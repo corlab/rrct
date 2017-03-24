@@ -42,7 +42,7 @@ public:
 	Rotation(float qw, float qx, float qy, float qz,
 			const std::string& fId);
 //private:
-	Eigen::Matrix<float, 4, 1> rotation;
+	Eigen::VectorXf rotation;
 	std::string frameId;
 
 	Eigen::Quaternionf euler2Quaternion(const float roll, const float pitch,

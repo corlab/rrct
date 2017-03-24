@@ -29,13 +29,15 @@
 namespace rstrt {
 namespace dynamics {
 
-Wrench::Wrench() {
-	this->forces.fill(0);
-	this->torques.fill(0);
+Wrench::Wrench() : forces(3), torques(3) {
+	forces.fill(0);
+	torques.fill(0);
 }
 
 Wrench::Wrench(float x, float y, float z, float a, float b, float c) :
-		forces(x, y, z), torques(a, b, c) {
+		forces(3), torques(3) {
+	forces << x, y, z;
+	torques << a, b, c;
 }
 
 Wrench::Wrench(rstrt::dynamics::Forces f, rstrt::dynamics::Torques t) :

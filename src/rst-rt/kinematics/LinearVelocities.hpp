@@ -38,7 +38,7 @@ public:
     LinearVelocities();
     LinearVelocities(float x, float y, float z);
 //private:
-    Eigen::Matrix<float, 3, 1> linearVelocities;
+    Eigen::VectorXf linearVelocities;
 };
 
 std::ostream& operator<<(std::ostream& os, const LinearVelocities& cd);

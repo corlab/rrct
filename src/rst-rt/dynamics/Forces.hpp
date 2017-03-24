@@ -38,7 +38,7 @@ public:
 	Forces();
 	Forces(float x, float y, float z);
 //private:
-    Eigen::Matrix<float, 3, 1> forces;
+    Eigen::VectorXf forces;
 };
 
 std::ostream& operator<<(std::ostream& os, const Forces& cd);

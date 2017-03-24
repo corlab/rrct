@@ -29,18 +29,21 @@
 namespace rstrt {
 namespace kinematics {
 
-Twist::Twist() {
+Twist::Twist() : linear(3), angular(3) {
+	linear.fill(0);
+	angular.fill(0);
 }
 
 Twist::Twist(rstrt::kinematics::LinearVelocities l,
 		rstrt::geometry::AngularVelocity a) :
-		linear(l), angular(a) {
+		linear(l.linearVelocities), angular(a.angularVelocity) {
 
 }
 
 Twist::Twist(float x, float y, float z, float a, float b, float c) :
-		linear(x, y, z), angular(a, b, c) {
-
+		linear(3), angular(3) {
+	linear << x, y, z;
+	angular << a, b, c;
 }
 
 std::ostream& operator<<(std::ostream& os, const Twist& cd) {

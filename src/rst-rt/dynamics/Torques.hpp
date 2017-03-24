@@ -38,7 +38,7 @@ public:
 	Torques();
 	Torques(float a, float b, float c);
 //private:
-    Eigen::Matrix<float, 3, 1> torques;
+    Eigen::VectorXf torques;
 };
 
 std::ostream& operator<<(std::ostream& os, const Torques& cd);

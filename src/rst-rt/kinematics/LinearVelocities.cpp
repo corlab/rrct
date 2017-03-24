@@ -29,11 +29,13 @@
 namespace rstrt {
 namespace kinematics {
 
-LinearVelocities::LinearVelocities() {
+LinearVelocities::LinearVelocities() : linearVelocities(3) {
+	linearVelocities.fill(0);
 }
 
 LinearVelocities::LinearVelocities(float x, float y, float z)
-    : linearVelocities(x, y, z) {
+    : linearVelocities(3) {
+	linearVelocities << x, y, z;
 }
 
 std::ostream& operator<<(std::ostream& os, const LinearVelocities& cd) {

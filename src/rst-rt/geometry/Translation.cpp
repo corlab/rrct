@@ -29,17 +29,18 @@
 namespace rstrt {
 namespace geometry {
 
-Translation::Translation() {
+Translation::Translation() : translation(3) {
+	translation.fill(0);
 }
 
 Translation::Translation(float x, float y, float z)
     : translation(3) {
-	translation << x,y,z;
+	translation << x, y, z;
 }
 
 Translation::Translation(float x, float y, float z, const std::string& frameId)
     : translation(3), frameId(frameId) {
-	translation << x,y,z;
+	translation << x, y, z;
 }
 
 std::ostream& operator<<(std::ostream& os, const Translation& cd) {

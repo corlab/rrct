@@ -39,7 +39,6 @@ public:
     Translation(float x, float y, float z);
     Translation(float x, float y, float z, const std::string& frameId);
 //private:
-//    Eigen::Matrix<float, 3, 1> translation;
     Eigen::VectorXf translation;
     std::string                 frameId;
 };

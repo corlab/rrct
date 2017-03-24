@@ -38,7 +38,7 @@ public:
     AngularVelocity();
     AngularVelocity(float a, float b, float c);
 //private:
-    Eigen::Matrix<float, 3, 1> angularVelocity;
+    Eigen::VectorXf angularVelocity;
 };
 
 std::ostream& operator<<(std::ostream& os, const AngularVelocity& cd);

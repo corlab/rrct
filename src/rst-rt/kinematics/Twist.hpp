@@ -44,8 +44,8 @@ public:
 	Twist(float x, float y, float z, float a, float b, float c);
 
 //private:
-	rstrt::kinematics::LinearVelocities linear;
-	rstrt::geometry::AngularVelocity angular;
+	Eigen::VectorXf linear;
+	Eigen::VectorXf angular;
 };
 
 std::ostream& operator<<(std::ostream& os, const Twist& cd);

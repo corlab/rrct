@@ -38,7 +38,7 @@ public:
     LinearAcceleration();
     LinearAcceleration(float x, float y, float z);
 //private:
-    Eigen::Matrix<float, 3, 1> linearAcceleration;
+    Eigen::VectorXf linearAcceleration;
 };
 
 std::ostream& operator<<(std::ostream& os, const LinearAcceleration& cd);

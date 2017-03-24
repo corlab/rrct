@@ -29,32 +29,29 @@
 namespace rstrt {
 namespace geometry {
 
-Rotation::Rotation() {
+Rotation::Rotation() : rotation(4) {
+	rotation.fill(0);
 }
 
 Rotation::Rotation(float qw, float qx, float qy, float qz) :
-		rotation(qw, qx, qy, qz) {
+		rotation(4) {
+	rotation << qw, qx, qy, qz;
 }
 
 Rotation::Rotation(float qw, float qx, float qy, float qz,
 		const std::string& fId) :
-		rotation(qw, qx, qy, qz), frameId(fId) {
+		rotation(4), frameId(fId) {
+	rotation << qw, qx, qy, qz;
 }
 
-Rotation::Rotation(float r, float p, float y) {
+Rotation::Rotation(float r, float p, float y) : rotation(4) {
 	Eigen::Quaternionf q = euler2Quaternion(r, p, y);
-	rotation(0) = q.w();
-	rotation(1) = q.x();
-	rotation(2) = q.y();
-	rotation(3) = q.z();
+	rotation << q.w(), q.x(), q.y(), q.z();
 }
 
-Rotation::Rotation(float r, float p, float y, const std::string& fId) {
+Rotation::Rotation(float r, float p, float y, const std::string& fId) : rotation(4) {
 	Eigen::Quaternionf q = euler2Quaternion(r, p, y);
-	rotation(0) = q.w();
-	rotation(1) = q.x();
-	rotation(2) = q.y();
-	rotation(3) = q.z();
+	rotation << q.w(), q.x(), q.y(), q.z();
 	frameId = fId;
 }
 

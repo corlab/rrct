@@ -29,11 +29,13 @@
 namespace rstrt {
 namespace geometry {
 
-AngularVelocity::AngularVelocity() {
+AngularVelocity::AngularVelocity() : angularVelocity(3) {
+	angularVelocity.fill(0);
 }
 
 AngularVelocity::AngularVelocity(float a, float b, float c)
-    : angularVelocity(a, b, c) {
+    : angularVelocity(3) {
+	angularVelocity << a, b, c;
 }
 
 std::ostream& operator<<(std::ostream& os, const AngularVelocity& cd) {

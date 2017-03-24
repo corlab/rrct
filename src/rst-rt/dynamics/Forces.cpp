@@ -29,11 +29,13 @@
 namespace rstrt {
 namespace dynamics {
 
-Forces::Forces() {
+Forces::Forces() : forces(3) {
+	forces.fill(0);
 }
 
 Forces::Forces(float x, float y, float z)
-    : forces(x, y, z) {
+    : forces(3) {
+	forces << x, y, z;
 }
 
 std::ostream& operator<<(std::ostream& os, const Forces& cd) {

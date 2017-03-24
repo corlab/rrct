@@ -29,11 +29,13 @@
 namespace rstrt {
 namespace dynamics {
 
-Torques::Torques() {
+Torques::Torques() : torques(3) {
+	torques.fill(0);
 }
 
 Torques::Torques(float a, float b, float c)
-    : torques(a, b, c) {
+    : torques(3) {
+	torques << a, b, c;
 }
 
 std::ostream& operator<<(std::ostream& os, const Torques& cd) {
