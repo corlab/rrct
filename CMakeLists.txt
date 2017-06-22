@@ -37,7 +37,7 @@ set(INSTALL_SUFFIX "${${PROJECT_NAME_UPPER}_VERSION}")
 set(LIBRARY_NAME "${CMAKE_PROJECT_NAME}${INSTALL_SUFFIX}")
 
 # Dependencies
-
+find_package(YCM QUIET)
 find_package(Eigen3)
 
 add_definitions(${EIGEN3_DEFINITIONS})
