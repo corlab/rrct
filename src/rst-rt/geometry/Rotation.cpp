@@ -71,10 +71,10 @@ Eigen::Quaternionf Rotation::euler2Quaternion(const float roll,
 		const float pitch, const float yaw) {
 	// TODO 1 xyz order: If there is a problem check all the other 24 combinations of euler angles -.-
 	// TODO 2 Don't know it this has a bad influence on real-time?
-	Eigen::AngleAxisf rollAngle((roll * M_PI) / 180, Eigen::Vector3f::UnitX());
-	Eigen::AngleAxisf yawAngle((yaw * M_PI) / 180, Eigen::Vector3f::UnitZ());
-	Eigen::AngleAxisf pitchAngle((pitch * M_PI) / 180,
-			Eigen::Vector3f::UnitY());
+	// convert to deg if necessary (roll * M_PI) / 180
+	Eigen::AngleAxisf rollAngle(roll, Eigen::Vector3f::UnitX());
+	Eigen::AngleAxisf yawAngle(yaw, Eigen::Vector3f::UnitZ());
+	Eigen::AngleAxisf pitchAngle(pitch, Eigen::Vector3f::UnitY());
 
 	return rollAngle * pitchAngle * yawAngle;
 }
