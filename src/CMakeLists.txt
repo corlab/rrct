@@ -1,6 +1,6 @@
 # This file is a part of RST-RT (CogIMon) project
 #
-# Copyright (C) 2016 Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+# Copyright (C) 2016, 2017 Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
 #
 # This file may be licensed under the terms of the
 # GNU Lesser General Public License Version 3 (the ``LGPL''),
@@ -40,11 +40,12 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/Forces.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/Torques.cpp
             ${CMAKE_PROJECT_NAME}/dynamics/Wrench.cpp
-            
+
             ${CMAKE_PROJECT_NAME}/robot/JointState.cpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.cpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.cpp
             ${CMAKE_PROJECT_NAME}/robot/Odometry.cpp
+            ${CMAKE_PROJECT_NAME}/robot/ForceApplication.cpp
 )
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
@@ -65,11 +66,12 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/Forces.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/Torques.hpp
             ${CMAKE_PROJECT_NAME}/dynamics/Wrench.hpp
-            
+
             ${CMAKE_PROJECT_NAME}/robot/JointState.hpp
             ${CMAKE_PROJECT_NAME}/robot/Weights.hpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.hpp
             ${CMAKE_PROJECT_NAME}/robot/Odometry.hpp
+            ${CMAKE_PROJECT_NAME}/robot/ForceApplication.hpp
 )
 
 # Shared object
