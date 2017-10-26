@@ -29,6 +29,10 @@
 namespace rstrt {
 namespace robot {
 
+ForceApplication::ForceApplication() {
+
+}
+
 ForceApplication::ForceApplication(const std::string& link,
                                    const Eigen::VectorXf& force,
                                    const Eigen::VectorXf& applicationPoint) {

@@ -36,6 +36,9 @@ namespace robot {
 
 class ForceApplication {
 public:
+
+    ForceApplication();
+
     ForceApplication(const std::string& link,
                      const Eigen::VectorXf& force,
                      const Eigen::VectorXf& applicationPoint);
