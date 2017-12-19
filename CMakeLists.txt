@@ -26,6 +26,12 @@ cmake_minimum_required(VERSION 2.8.3)
 
 project(rst-rt CXX)
 
+if(NOT CMAKE_VERSION VERSION_LESS 3.1)
+    set(CMAKE_CXX_STANDARD 11)
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+endif()
+
 string(TOUPPER "${CMAKE_PROJECT_NAME}" PROJECT_NAME_UPPER)
 
 set(${PROJECT_NAME_UPPER}_VERSION_MAJOR 0)

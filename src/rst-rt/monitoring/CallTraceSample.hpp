@@ -27,6 +27,7 @@
 #pragma once
 
 #include <iostream>
+#include <cstdint>
 
 namespace rstrt {
 namespace monitoring {
@@ -59,7 +60,7 @@ public:
 	};
     
 	CallTraceSample();
-	CallTraceSample(const std::string& callName, const std::string& containerName, const double callTime, const int callType = 0);
+	CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const int callType = 0);
 
     static const CallSampleType convertCallTypeFromInt2Enum(const int& type);
     static const int convertCallTypeFromEnum2Int(const CallSampleType& type);
@@ -71,7 +72,8 @@ public:
 
 	std::string container_name;
 
-	double call_time;
+    // nano seconds
+	uint_least64_t call_time;
 
     int call_type;              // optional
 };

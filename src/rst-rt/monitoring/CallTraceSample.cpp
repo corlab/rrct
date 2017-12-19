@@ -32,7 +32,7 @@ namespace monitoring {
 CallTraceSample::CallTraceSample() : call_type(CALL_UNIVERSAL) {
 }
 
-CallTraceSample::CallTraceSample(const std::string& callName, const std::string& containerName, const double callTime, const int callType) {
+CallTraceSample::CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const int callType) {
 	this->call_name = callName;
 	this->container_name = containerName;
 	this->call_time = callTime;
