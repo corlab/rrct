@@ -46,6 +46,8 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.cpp
             ${CMAKE_PROJECT_NAME}/robot/Odometry.cpp
             ${CMAKE_PROJECT_NAME}/robot/ForceApplication.cpp
+
+            ${CMAKE_PROJECT_NAME}/monitoring/CallTraceSample.cpp
 )
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
@@ -72,6 +74,8 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/robot/IMU.hpp
             ${CMAKE_PROJECT_NAME}/robot/Odometry.hpp
             ${CMAKE_PROJECT_NAME}/robot/ForceApplication.hpp
+
+            ${CMAKE_PROJECT_NAME}/monitoring/CallTraceSample.hpp
 )
 
 # Shared object
