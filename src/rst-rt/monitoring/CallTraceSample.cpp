@@ -32,10 +32,11 @@ namespace monitoring {
 CallTraceSample::CallTraceSample() : call_type(CALL_UNIVERSAL) {
 }
 
-CallTraceSample::CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const int callType) {
+CallTraceSample::CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const uint_least64_t callDuration, const int callType) {
 	this->call_name = callName;
 	this->container_name = containerName;
 	this->call_time = callTime;
+	this->call_duration = callDuration;
 	this->call_type = callType;
 }
 
@@ -57,6 +58,8 @@ const CallTraceSample::CallSampleType CallTraceSample::convertCallTypeFromInt2En
 		return CallTraceSample::CALL_PORT_READ_NEWDATA;
 	case 7:
 		return CallTraceSample::CALL_PORT_READ_OLDDATA;
+	case 8:
+		return CallTraceSample::CALL_START_WITH_DURATION;
 	default:
 		// should actually not happen!
 		return CallTraceSample::CALL_UNIVERSAL;
@@ -81,6 +84,8 @@ const int CallTraceSample::convertCallTypeFromEnum2Int(const CallTraceSample::Ca
 		return 6;
 	case CallTraceSample::CALL_PORT_READ_OLDDATA:
 		return 7;
+	case CallTraceSample::CALL_START_WITH_DURATION:
+		return 8;
 	default:
 		// should actually not happen!
 		return -1;
@@ -105,6 +110,8 @@ const std::string CallTraceSample::convertCallTypeFromEnum2String(const CallTrac
 		return "CALL_PORT_READ_NEWDATA";
 	case CallTraceSample::CALL_PORT_READ_OLDDATA:
 		return "CALL_PORT_READ_OLDDATA";
+	case CallTraceSample::CALL_START_WITH_DURATION:
+		return "CALL_START_WITH_DURATION";
 	default:
 		// should actually not happen!
 		return "";
@@ -129,6 +136,8 @@ const std::string CallTraceSample::convertCallTypeFromInt2String(const int& type
 		return "CALL_PORT_READ_NEWDATA";
 	case 7:
 		return "CALL_PORT_READ_OLDDATA";
+	case 8:
+		return "CALL_START_WITH_DURATION";
 	default:
 		// should actually not happen!
 		return "UNKNOWN CALL TYPE";
@@ -136,10 +145,12 @@ const std::string CallTraceSample::convertCallTypeFromInt2String(const int& type
 }
 
 std::ostream& operator<<(std::ostream& os, const CallTraceSample& cd) {
-	os << std::endl << "call name: " << cd.call_name;
-	os << std::endl << "container name: " << cd.container_name;
-	os << std::endl << "call time: " << cd.call_time;
-	os << std::endl << "call type:" << CallTraceSample::convertCallTypeFromInt2String(cd.call_type);
+	os << std::endl << "{\"call_name\":\"" << cd.call_name
+					<< "\",\"container_name\":\"" << cd.container_name
+					<< "\",\"call_time\":" << cd.call_time
+					<< ",\"call_duration\":" << cd.call_duration
+					<< ",\"call_type\":\"" << CallTraceSample::convertCallTypeFromInt2String(cd.call_type) << "\"}"
+					<< std::endl;
 	return os;
 }
 

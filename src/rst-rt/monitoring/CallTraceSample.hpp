@@ -56,11 +56,13 @@ public:
         // Use to indicate a port read call sample that returned NewData.
         CALL_PORT_READ_NEWDATA = 6,
         // Use to indicate a port read call sample that returned OldData.
-        CALL_PORT_READ_OLDDATA = 7
+        CALL_PORT_READ_OLDDATA = 7,
+
+        CALL_START_WITH_DURATION = 8
 	};
     
 	CallTraceSample();
-	CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const int callType = 0);
+	CallTraceSample(const std::string& callName, const std::string& containerName, const uint_least64_t callTime, const uint_least64_t callDuration = 0, const int callType = 0);
 
     static const CallSampleType convertCallTypeFromInt2Enum(const int& type);
     static const int convertCallTypeFromEnum2Int(const CallSampleType& type);
@@ -74,6 +76,9 @@ public:
 
     // nano seconds
 	uint_least64_t call_time;
+
+    // nano seconds
+    uint_least64_t call_duration;
 
     int call_type;              // optional
 };
