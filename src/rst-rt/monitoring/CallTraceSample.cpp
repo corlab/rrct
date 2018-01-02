@@ -149,8 +149,8 @@ std::ostream& operator<<(std::ostream& os, const CallTraceSample& cd) {
 					<< "\",\"container_name\":\"" << cd.container_name
 					<< "\",\"call_time\":" << cd.call_time
 					<< ",\"call_duration\":" << cd.call_duration
-					<< ",\"call_type\":\"" << CallTraceSample::convertCallTypeFromInt2String(cd.call_type) << "\"}"
-					<< std::endl;
+					<< ",\"call_type\":\"" << CallTraceSample::convertCallTypeFromInt2String(cd.call_type) << "\"}";
+					// << std::endl;
 	return os;
 }
 
