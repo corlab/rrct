@@ -48,6 +48,8 @@ set(SOURCES ${CMAKE_PROJECT_NAME}/geometry/Translation.cpp
             ${CMAKE_PROJECT_NAME}/robot/ForceApplication.cpp
 
             ${CMAKE_PROJECT_NAME}/monitoring/CallTraceSample.cpp
+
+            ${CMAKE_PROJECT_NAME}/math/MatrixDouble.cpp
 )
 
 set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
@@ -76,6 +78,8 @@ set(HEADERS ${CMAKE_PROJECT_NAME}/geometry/Translation.hpp
             ${CMAKE_PROJECT_NAME}/robot/ForceApplication.hpp
 
             ${CMAKE_PROJECT_NAME}/monitoring/CallTraceSample.hpp
+
+            ${CMAKE_PROJECT_NAME}/math/MatrixDouble.hpp
 )
 
 # Shared object
