@@ -34,6 +34,7 @@ MatrixDouble::MatrixDouble() {
 
 MatrixDouble::MatrixDouble(unsigned int rows, unsigned int cols) {
 	this->matrix.resize(rows, cols);
+    this->matrix.setZero();
 }
 
 std::ostream& operator<<(std::ostream& os, const MatrixDouble& cd) {
