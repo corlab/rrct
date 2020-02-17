@@ -27,7 +27,7 @@
 #include "MatrixDouble.hpp"
 
 namespace rstrt {
-namespace dynamics {
+namespace math {
 
 MatrixDouble::MatrixDouble() {
 }

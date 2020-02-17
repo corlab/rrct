@@ -31,7 +31,7 @@
 #include <Eigen/Dense>
 
 namespace rstrt {
-namespace dynamics {
+namespace math {
 
 class MatrixDouble {
 public:
